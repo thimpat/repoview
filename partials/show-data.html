@@ -1,0 +1,54 @@
+<div class="data-header">
+	<div class="row">
+		<div class="col-sm-2"> 		
+		<span data-ng-click="previous()">&lt;&lt;</span>
+			<input id="pagenumber" type="text" class="pagenum" name="pagenumber" value="1" data-ng-model="pagenumber" readonly>
+			<span data-ng-click="next()">&gt;&gt;</span> </div>
+		<div class="col-sm-2">
+			<label for="perpageitems">Items per page: </label>
+			<input id="perpageitems" type="text" class="perpageitems" name="perpageitems" value="1" data-ng-model="perpageitems" data-ng-change="fastReward();update()">
+		</div>
+		<div class="col-sm-2">
+			<span>Sort by: </span>
+			<select data-ng-model="sort" data-ng-change="update()">
+				<option value="stars" selected="selected">stars</option>			
+				<option value="forks">forks</option>
+				<option value="updated">updated</option>				
+			</select>
+		</div>
+		<div class="col-sm-1">
+			<select data-ng-model="order" data-ng-change="update()">
+				<option value="desc" selected="selected">Desc.</option>			
+				<option value="asc">Asc.</option>
+			</select>
+		</div>
+		<div class="col-sm-2" data-ng-cloak>{{totalPages}} pages</div>
+		<div class="col-sm-3">			
+			<input type="search" data-ng-model="search" data-ng-change="update(2000)" data-custom-enter="update()">
+			<i class="glyphicon glyphicon-filter" data-ng-click="update()"></i>
+			<img src="../img/pre-load-1.GIF" ng-show="updating()" data-ng-cloak>
+		</div>		
+	</div>
+</div>
+<div>
+	<table class="rwd-table" style="max-width:1280px">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>FullName</th>
+			<th>Description</th>
+			<th>Owner</th>			
+			<th>Url</th>
+		</tr>
+		<tr ng-repeat="item in items" data-ng-cloak>	<!--  | filter:search -->
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.full_name}}</td>
+			<td>{{item.description}}</td>
+			<td>{{item.owner.login}}</td>
+			<td>{{item.owner.repos_url}}</td>
+		</tr>
+	</table>
+	<div id="message" class="alert-warning" data-ng-bind="message" data-ng-cloak> {{message}} </div>
+</div>
+</div>

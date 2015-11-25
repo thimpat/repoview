@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Public GitHub repository viewer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/js/raw/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Custom styles for this template -->
+	<link rel="stylesheet" href="/css/style.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type='text/javascript' src='/js/raw/angular/angular.js'></script>
+	<script type='text/javascript' src='/js/raw/angular-route/angular-route.js'></script>		
+  </head>
+
+  <body>
+
+	
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="NavCtrl">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#showForm" data-ng-click="home()">
+					<i class="glyphicon glyphicon-home"></i>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+						<a href="#showData">
+						<span id="focusname" class="focusname" data-ng-bind="focusname"></span>						
+						</a>                
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">			
+                <div data-ng-view>
+				</div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+	<script type='text/javascript' src='/js/raw/jquery/dist/jquery.js'></script>
+	<script src='/js/raw/bootstrap/dist/js/bootstrap.min.js'></script>
+	
+	<script src="/js/main/demo.js"></script>
+	<script src="/js/main/angular-app.js"></script>
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/js/raw/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
